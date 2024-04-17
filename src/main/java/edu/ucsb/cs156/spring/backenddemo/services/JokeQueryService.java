@@ -29,7 +29,7 @@ public class JokeQueryService {
         headers.setContentType(MediaType.APPLICATION_JSON);
 
         HttpEntity<String> entity = new HttpEntity<>(headers);
-        
+
         Map<String, String> uriVariables = Map.of("category", category, "numJokes", Integer.toString(numJokes));
 
         ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);
