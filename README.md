@@ -2,16 +2,14 @@
 
 Lab instructions: <https://ucsb-cs156.github.io/s24/lab/team01.html>
 
-* TODO: Update the following table, then delete this line that says "TODO".
-
 ```
-|   Name    | GitHub Id |  Service                    | Controller                |
-|-----------|-----------|-----------------------------|---------------------------|
-|           |           | `LocationQueryService`      | `LocationController`      |
-|           |           | `PublicHolidayQueryService` | `PublicHolidayController` |
-|           |           | `TidesQueryService`         | `TidesController`         |
-|           |           | `UniversityQueryService`    | `UniversityController`    |
-|           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
+|   Name    |   GitHub Id   |  Service                    | Controller                |
+|-----------|---------------|-----------------------------|---------------------------|
+| Eric W.   | ericpretzel   | `LocationQueryService`      | `LocationController`      |
+| Kevin L.  | coder626      | `PublicHolidayQueryService` | `PublicHolidayController` |
+| Kevin C.  | KevinChen0527 | `TidesQueryService`         | `TidesController`         |
+| Akshay K. | a-k-u-m-a-r   | `UniversityQueryService`    | `UniversityController`    |
+| Tim C.    | tim-choi      | `ZipCodeQueryService`       | `ZipCodeController`       |
 ```
 
 Repo: https://github.com/ucsb-cs156-s24/team01-s24-4pm-3
