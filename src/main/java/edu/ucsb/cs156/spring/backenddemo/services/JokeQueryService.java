@@ -13,7 +13,7 @@ import java.util.Map;
 @Slf4j
 @Service
 public class JokeQueryService {
-
+// commit
     private final RestTemplate restTemplate;
 
     public JokeQueryService(RestTemplateBuilder restTemplateBuilder) {
