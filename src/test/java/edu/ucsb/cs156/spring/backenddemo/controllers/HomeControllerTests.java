@@ -49,12 +49,14 @@ public class HomeControllerTests {
         String baseUrl = "http://localhost:8080/";
 
         List<String> team = new ArrayList<String>();
-        team.add("Jing P.");
-        team.add("Christian S.");
-        team.add("Guy W.");
-        team.add("Phill C.");
+        team.add("Mike J.");
+        team.add("Eric W.");
+        team.add("Kevin C.");
+        team.add("Kevin L.");
+        team.add("Akshay K.");
+        team.add("Tim L.");
         resultMap.put("team", team);
-        resultMap.put("repo", "https://github.com/ucsb-cs156-s24/STARTER-team01");
+        resultMap.put("repo", "https://github.com/ucsb-cs156-s24/team01-s24-4pm-3");
         resultMap.put("api-documentation", baseUrl + "swagger-ui/index.html");
         String expected = mapper.writeValueAsString(resultMap);
         String actual = HomeController.getHomePageObjectJSON("http://localhost:8080/");
