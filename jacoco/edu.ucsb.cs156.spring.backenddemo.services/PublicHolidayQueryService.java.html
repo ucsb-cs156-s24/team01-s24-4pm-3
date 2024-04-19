@@ -9,21 +9,37 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
-<span class="fc" id="L12">@Slf4j</span>
+import org.springframework.http.*;
+
+import java.util.List;
+import java.util.Map;
+
+
+
+<span class="fc" id="L19">@Slf4j</span>
 @Service
 public class PublicHolidayQueryService {
 
 
     private final RestTemplate restTemplate;
 
-<span class="fc" id="L19">    public PublicHolidayQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
-<span class="fc" id="L20">        restTemplate = restTemplateBuilder.build();</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L26">    public PublicHolidayQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
+<span class="fc" id="L27">        restTemplate = restTemplateBuilder.build();</span>
+<span class="fc" id="L28">    }</span>
 
-    public static final String ENDPOINT = &quot;&quot;;
+    public static final String ENDPOINT = &quot;https://date.nager.at/api/v2/publicholidays/{year}/{countryCode}&quot;;
 
     public String getJSON(String year, String countryCode) throws HttpClientErrorException {
-<span class="nc" id="L26">        return &quot;&quot;;</span>
+<span class="fc" id="L33">        log.info(&quot;year={}&quot;, year);</span>
+<span class="fc" id="L34">        log.info(&quot;countryCode={}&quot;, countryCode);</span>
+<span class="fc" id="L35">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L36">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L37">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+
+<span class="fc" id="L39">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
+
+<span class="fc" id="L41">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, year, countryCode);</span>
+<span class="fc" id="L42">        return re.getBody();</span>
     }
 
    
