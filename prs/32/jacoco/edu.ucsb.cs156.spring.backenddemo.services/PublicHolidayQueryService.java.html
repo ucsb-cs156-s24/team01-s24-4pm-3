@@ -27,7 +27,7 @@ public class PublicHolidayQueryService {
 <span class="fc" id="L27">        restTemplate = restTemplateBuilder.build();</span>
 <span class="fc" id="L28">    }</span>
 
-    public static final String ENDPOINT = &quot;https://date.nager.at/swagger/index.html&quot;;
+    public static final String ENDPOINT = &quot;https://date.nager.at/api/v2/publicholidays/{year}/{countryCode}&quot;;
 
     public String getJSON(String year, String countryCode) throws HttpClientErrorException {
 <span class="fc" id="L33">        log.info(&quot;year={}&quot;, year);</span>
