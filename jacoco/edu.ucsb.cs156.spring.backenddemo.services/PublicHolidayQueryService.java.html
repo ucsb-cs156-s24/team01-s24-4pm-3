@@ -38,8 +38,9 @@ public class PublicHolidayQueryService {
 
 <span class="fc" id="L39">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(&quot;body&quot;, headers);</span>
 
-<span class="fc" id="L41">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, year, countryCode);</span>
-<span class="fc" id="L42">        return re.getBody();</span>
+<span class="fc" id="L41">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;year&quot;, year, &quot;countryCode&quot;, countryCode);</span>
+<span class="fc" id="L42">        ResponseEntity&lt;String&gt; re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);</span>
+<span class="fc" id="L43">        return re.getBody();</span>
     }
 
    
