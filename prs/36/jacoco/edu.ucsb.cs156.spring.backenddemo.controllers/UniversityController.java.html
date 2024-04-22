@@ -38,9 +38,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
         @Parameter(name=&quot;name&quot;, example=&quot;Harvard&quot;) @RequestParam String name
     ) throws JsonProcessingException {
 <span class="fc" id="L40">        String result = universityQueryService.getJSON(name);</span>
-        // log.info(result);
-<span class="fc" id="L42">        System.out.println(result);</span>
-<span class="fc" id="L43">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L41">        return ResponseEntity.ok().body(result);</span>
     }
 
 }
