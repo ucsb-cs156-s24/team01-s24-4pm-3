@@ -38,8 +38,6 @@ public class UniversityController {
         @Parameter(name="name", example="Harvard") @RequestParam String name
     ) throws JsonProcessingException {
         String result = universityQueryService.getJSON(name);
-        // log.info(result);
-        System.out.println(result);
         return ResponseEntity.ok().body(result);
     }
 
