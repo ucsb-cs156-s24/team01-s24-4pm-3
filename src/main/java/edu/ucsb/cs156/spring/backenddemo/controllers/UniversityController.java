@@ -19,12 +19,12 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name="University info")
-// @Operation(summary = "Get info about universities based on their name", description = "JSON return format documented here: http://universities.hipolabs.com/search")
+@Tag(name="University info", description="JSON return format documented here: http://universities.hipolabs.com/search")
+
 // @Parameter(name="name", description="name of university", example="100")
 @Slf4j
 @RestController
-@RequestMapping("/api/university/get")
+@RequestMapping("/api/university")
 public class UniversityController {
 
     ObjectMapper mapper = new ObjectMapper();
@@ -32,13 +32,14 @@ public class UniversityController {
     @Autowired
     UniversityQueryService universityQueryService;
 
-    @Operation(summary="Get a country's ISO codes and more", description ="Country data uploaded to OpenDataSoft by the International Labour Organization")
+    @Operation(summary = "Get list of universities that match a given name", description = "Uses API documented here: http://universities.hipolabs.com/search")
     @GetMapping("/get")
     public ResponseEntity<String> getUniversityName(
         @Parameter(name="name", example="Harvard") @RequestParam String name
     ) throws JsonProcessingException {
-        // log.info("getUniversityName: name={}", getUniversityName);
         String result = universityQueryService.getJSON(name);
+        // log.info(result);
+        System.out.println(result);
         return ResponseEntity.ok().body(result);
     }
 
