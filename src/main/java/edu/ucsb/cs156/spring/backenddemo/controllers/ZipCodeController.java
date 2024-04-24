@@ -32,7 +32,7 @@ public class ZipCodeController {
     @Operation(summary="Get a country's zipcodes and more", description ="Country data uploaded to OpenDataSoft by the International Labour Organization")
     @GetMapping("/get")
     public ResponseEntity<String> getZipCodes(
-        @Parameter(name="zipcode", example="United States") @RequestParam String zipcode
+        @Parameter(name="zipcode", example="93117") @RequestParam String zipcode
     ) throws JsonProcessingException {
         log.info("getZipCodes: zipcode={}", zipcode);
         String result = zipCodeQueryService.getJSON(zipcode);
