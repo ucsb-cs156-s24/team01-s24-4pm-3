@@ -32,7 +32,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Operation(summary=&quot;Get a country's zipcodes and more&quot;, description =&quot;Country data uploaded to OpenDataSoft by the International Labour Organization&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getZipCodes(
-        @Parameter(name=&quot;zipcode&quot;, example=&quot;United States&quot;) @RequestParam String zipcode
+        @Parameter(name=&quot;zipcode&quot;, example=&quot;93117&quot;) @RequestParam String zipcode
     ) throws JsonProcessingException {
 <span class="fc" id="L37">        log.info(&quot;getZipCodes: zipcode={}&quot;, zipcode);</span>
 <span class="fc" id="L38">        String result = zipCodeQueryService.getJSON(zipcode);</span>
