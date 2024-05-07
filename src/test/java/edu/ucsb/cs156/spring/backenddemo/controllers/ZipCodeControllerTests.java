@@ -35,10 +35,10 @@ public class ZipCodeControllerTests {
   public void test_getZipCodes() throws Exception {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
-    String country = "United States";
-    when(mockZipCodeQueryService.getJSON(eq(country))).thenReturn(fakeJsonResult);
+    String zipcode = "93117";
+    when(mockZipCodeQueryService.getJSON(eq(zipcode))).thenReturn(fakeJsonResult);
 
-    String url = String.format("/api/zipcodes/get?country=%s", country);
+    String url = String.format("/api/zipcodes/get?zipcode=%s", zipcode);
 
     MvcResult response = mockMvc
         .perform( get(url).contentType("application/json"))
