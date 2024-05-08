@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name=&quot;Country Code info from http://api.zippopotam.us/us/{zipcode}&quot;)
+@Tag(name=&quot;Zip Code info from http://api.zippopotam.us/&quot;)
 <span class="fc" id="L22">@Slf4j</span>
 @RestController
 @RequestMapping(&quot;/api/zipcodes&quot;)
@@ -32,10 +32,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Operation(summary=&quot;Get a country's zipcodes and more&quot;, description =&quot;Country data uploaded to OpenDataSoft by the International Labour Organization&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getZipCodes(
-        @Parameter(name=&quot;country&quot;, example=&quot;United States&quot;) @RequestParam String country
+        @Parameter(name=&quot;zipcode&quot;, example=&quot;93117&quot;) @RequestParam String zipcode
     ) throws JsonProcessingException {
-<span class="fc" id="L37">        log.info(&quot;getZipCodes: country={}&quot;, country);</span>
-<span class="fc" id="L38">        String result = zipCodeQueryService.getJSON(country);</span>
+<span class="fc" id="L37">        log.info(&quot;getZipCodes: zipcode={}&quot;, zipcode);</span>
+<span class="fc" id="L38">        String result = zipCodeQueryService.getJSON(zipcode);</span>
 <span class="fc" id="L39">        return ResponseEntity.ok().body(result);</span>
     }
 
